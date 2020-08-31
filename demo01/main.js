@@ -2,7 +2,7 @@ const http = require("http");
 const url = require("url");
 
 const portti = 3001;
-
+//req = pyyntö palvelimelle , res = vastaus clientille
 const serveri = http.createServer((req, res) => {
 
     if (req.url != "/favicon.ico") {
@@ -19,7 +19,7 @@ const serveri = http.createServer((req, res) => {
     }
 
 });
-
+//callback tarkoittaa funktiolle parametriksi toinen funktio
 serveri.listen(portti, () => {
     console.log(`Palvelin käynnistyi porttiin ${portti}`);   
 });
