@@ -3,7 +3,7 @@ const url = require("url");
 
 const portti = 3001;
 
-const serveri = http.createServer((req, res) => {
+const serveri = http.createServer((req, res) => { 
 
     if (req.url != "/favicon.ico") {
 
