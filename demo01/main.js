@@ -4,9 +4,10 @@ const url = require("url");
 const portti = 3001;
 
 const serveri = http.createServer((req, res) => {
-
+//req = request, res = response
     if (req.url != "/favicon.ico") {
-
+        
+        //osoiteriviltä tuleva pyyntö req.url
         let tiedot = url.parse(req.url, true).query;
     
         let nimi = (tiedot.nimi) ? tiedot.nimi : "tuntematon";
@@ -20,6 +21,7 @@ const serveri = http.createServer((req, res) => {
 
 });
 
+//callback
 serveri.listen(portti, () => {
     console.log(`Palvelin käynnistyi porttiin ${portti}`);   
 });
