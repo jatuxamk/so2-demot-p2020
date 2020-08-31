@@ -6,7 +6,7 @@ const portti = 3001;
 const serveri = http.createServer((req, res) => {
 
     if (req.url != "/favicon.ico") {
-
+ //req.url  mitä osoiterivillä ollaan pyydetty
         let tiedot = url.parse(req.url, true).query;
     
         let nimi = (tiedot.nimi) ? tiedot.nimi : "tuntematon";
