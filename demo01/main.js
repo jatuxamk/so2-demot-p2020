@@ -4,7 +4,7 @@ const url = require("url");
 const portti = 3001;
 
 const serveri = http.createServer((req, res) => {
-
+//req.url mitä osoiterivillä ollaan pyydetty
     if (req.url != "/favicon.ico") {
 
         let tiedot = url.parse(req.url, true).query;
