@@ -1,14 +1,14 @@
-const express = require("express");
-const fs = require("fs");
+const express = require("express"); //laitan vain ne mistä tarvitsen vähän lisää ymmärrystä ehkä ?
+const fs = require("fs"); 
 
-const bodyParser = require("body-parser");
+const bodyParser = require("body-parser"); // expressin lisäosa jolla parsitaan tiedostoja ?
 
 const app = express();
 
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded( { "extended" : true } ));
+app.use(bodyParser.json()); // tarvitaan jotta voidaan tehdä tuo req.body.viesti JSON muotoon ?
+app.use(bodyParser.urlencoded( { "extended" : true } ));// oli joku urlencodaus homma, josta kerrotaan lisää myöhemmin.
 
-app.use(express.static("./public"));
+app.use(express.static("./public")); // tarvitaan kansion staattisiin tiedostoihin ??
 
 app.post("/tallenna", (req, res) => {
 
@@ -30,7 +30,7 @@ app.post("/tallenna", (req, res) => {
 
 });
 
-app.get("/lue.html", (req, res) => {
+app.get("/lue.html", (req, res) => { // mitä tämä kohta teki ? Kun poistettiin tuo lue.html , niin tämäkö luo dynaamisen lue.html tiedoston joka on sitten tuo let sivut ?
 
     let viestit = fs.readFileSync("./viestit.txt");
 
