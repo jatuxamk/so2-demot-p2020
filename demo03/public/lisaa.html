@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <title>Demo 3: Tiedostojen upload</title>
+</head>
+<body>
+    
+    <div class="container">
+
+
+        <h1>Demo 3: Tiedostojen upload</h1>
+
+        <h2>Lisää uusi kuva galleriaan</h2>
+
+        <form method="POST" action="/lisaakuva" enctype="multipart/form-data">
+
+            <div class="form-group mb-2">
+                <label for="otsikko">Kuvan otsikko</label>
+                <input class="form-control" type="text" name="otsikko" id="otsikko">
+                <label for="tiedosto">Kuvatiedosto</label>
+                <input class="form-control-file" type="file" name="tiedosto" id="tiedosto">
+            </div>            
+
+            <button type="submit" class="btn btn-primary">Lähetä kuva palvelimelle</button>
+            <a href="/" class="btn btn-secondary">Peruuta</a>
+
+        </form>
+
+    </div>
+
+</body>
+</html>
