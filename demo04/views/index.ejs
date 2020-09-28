@@ -1,26 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <title>Demo 4: Express ja EJS-templatet</title>
-</head>
-<body>
 
-    <nav class="navbar navbar-dark bg-dark mb-4">
+    <%- include("includes/header") -%>
 
-        <div class="container">
-
-            <a class="navbar-brand" href="/">
-                <img src="/img/logo.png" height="40" alt="Etusivulle">
-                Demo 4: Express ja EJS-templatet
-            </a>
-    </nav>
-
-    <%=terveiset%>
-
-    <div class="container">
-    
     <h2 class="mt-2">Käyttäjärekisteri</h2>
 
     <table class="table table-bordered">
@@ -32,17 +12,19 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>Janne Turunen</td>
-                <td>jatuxamk</td>
-                <td>Mikkeli</td>
-            </tr>
+            <% kayttajat.forEach((kayttaja) => { %>
+                <tr>
+                    <td>
+                        <a href="/kayttaja/<%= kayttaja.id %>">
+                        <%= kayttaja.sukunimi %>, <%= kayttaja.etunimi %>
+                        </a> 
+                    </td>
+                    <td><%= kayttaja.kayttajatunnus %></td>
+                    <td><%= kayttaja.kaupunki %>, <%= kayttaja.maa %></td>
+                </tr>
+            <% });  %>
+
         </tbody>        
     </table>
- 
-    &copy; 2020 Xamk
 
-    </div>
-
-</body>
-</html>
+    <%- include("includes/footer") -%>    

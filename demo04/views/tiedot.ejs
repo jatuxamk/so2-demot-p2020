@@ -1,0 +1,28 @@
+<%- include("includes/header") -%>
+
+<h2>Käyttäjän tiedot</h2>
+
+<table class="table table-bordered">
+    <tr>
+        <td>Etunimi:</td>
+        <td><%= kayttaja.etunimi %></td>
+    </tr>
+    <tr>
+        <td>Sukunimi:</td>
+        <td><%= kayttaja.sukunimi %></td>
+    </tr>
+    <tr>
+        <td>Sukupuoli:</td>
+        <td><%= kayttaja.sukupuoli %></td>
+    </tr>
+    <tr>
+        <td>Kaupunki:</td>
+        <td><%= kayttaja.kaupunki %></td>
+    </tr>
+    <tr>
+        <td>Maa:</td>
+        <td><%= kayttaja.maa %></td>
+    </tr>         
+</table>
+
+<%- include("includes/footer") -%>
