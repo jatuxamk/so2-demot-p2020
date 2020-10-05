@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="/js/app.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <title>Demo 5: Tietomallit (models) ja EJS-templatet</title>
 </head>
@@ -14,6 +15,8 @@
 
     <h2>Ajopäiväkirja</h2>
 
+    <form method="POST" action="/tallenna" onSubmit="return vahvistaUusi()">
+
     <table class="table">
 
         <thead>
@@ -21,7 +24,8 @@
                 <th>Reitti</th>
                 <th>Kilometrit</th>
                 <th>Kirjaaja</th>
-                <th>Kirjauspvm.</th>                
+                <th>Kirjauspvm.</th>
+                <th>&nbsp;</th>                
             </tr>
         </thead>
 
@@ -31,12 +35,15 @@
             <% matkat.forEach((matka) => { %>        
                 
                 <% kilometritYht = kilometritYht + matka.kilometrit %>
+
+                <% let aika = new Date(matka.kirjaamispvm) %>
                 
                 <tr>
                     <td><%= matka.reitti %></td>
                     <td><%= matka.kilometrit %></td>
                     <td><%= matka.kirjaaja %></td>
-                    <td><%= matka.kirjaamispvm %></td>
+                    <td><%= aika.getDate()%>.<%=(aika.getMonth() + 1)%>.<%= aika.getFullYear() %>   </td>
+                    <td>&nbsp;</td> 
                 </tr>
             <% })%>
 
@@ -55,11 +62,16 @@
                     <td>
                         <%= aikaNyt.getDate()%>.<%=(aikaNyt.getMonth() + 1)%>.<%= aikaNyt.getFullYear() %>                        
                     </td>
+                    <td>
+                        <input type="submit" class="btn btn-primary" value="Lisää" >
+                    </td>
                 </tr>
 
         </tbody>
 
     </table>
+
+    </form>
 
     Kilometrit yhteensä: <%= kilometritYht %> km
 

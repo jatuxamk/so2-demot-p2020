@@ -1,20 +1,32 @@
 [
-    {
-        "reitti" : "Mikkeli - Helsinki - Mikkeli",
-        "kilometrit" : 500,
-        "kirjaaja" : "Janne",
-        "kirjaamispvm" : "4.10.2020"
-    },
-    {
-        "reitti" : "Mikkeli - Juva - Mikkeli",
-        "kilometrit" : 80,
-        "kirjaaja" : "Jussi",
-        "kirjaamispvm" : "5.10.2020"
-    },
-    {
-        "reitti" : "Mikkeli - Kangasniemi - Mikkeli",
-        "kilometrit" : 100,
-        "kirjaaja" : "Jaana",
-        "kirjaamispvm" : "5.10.2020"
-    }
+  {
+    "reitti": "Mikkeli - Helsinki - Mikkeli",
+    "kilometrit": 500,
+    "kirjaaja": "Janne",
+    "kirjaamispvm": 1601890273456
+  },
+  {
+    "reitti": "Mikkeli - Juva - Mikkeli",
+    "kilometrit": 80,
+    "kirjaaja": "Jussi",
+    "kirjaamispvm": 1601890273456
+  },
+  {
+    "reitti": "Mikkeli - Kangasniemi - Mikkeli",
+    "kilometrit": 100,
+    "kirjaaja": "Jaana",
+    "kirjaamispvm": 1601890273456
+  },
+  {
+    "reitti": "Mikkeli - Kouvola - Mikkeli",
+    "kilometrit": 200,
+    "kirjaaja": "Janne",
+    "kirjaamispvm": 1601890051440
+  },
+  {
+    "reitti": "Mikkeli - Savonlinna- Mikkeli",
+    "kilometrit": 200,
+    "kirjaaja": "Jussi",
+    "kirjaamispvm": 1601890273456
+  }
 ]
