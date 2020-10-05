@@ -25,16 +25,43 @@
             </tr>
         </thead>
 
+        <% let kilometritYht = 0 %>
+
         <tbody>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
+            <% matkat.forEach((matka) => { %>        
+                
+                <% kilometritYht = kilometritYht + matka.kilometrit %>
+                
+                <tr>
+                    <td><%= matka.reitti %></td>
+                    <td><%= matka.kilometrit %></td>
+                    <td><%= matka.kirjaaja %></td>
+                    <td><%= matka.kirjaamispvm %></td>
+                </tr>
+            <% })%>
+
+            <% let aikaNyt = new Date() %>
+
+                <tr>
+                    <td>
+                        <input class="form-control" type="text" name="reitti">
+                    </td>
+                    <td>
+                        <input class="form-control" type="text" name="kilometrit">
+                    </td>
+                    <td>
+                        <input class="form-control" type="text" name="kirjaaja">
+                    </td>
+                    <td>
+                        <%= aikaNyt.getDate()%>.<%=(aikaNyt.getMonth() + 1)%>.<%= aikaNyt.getFullYear() %>                        
+                    </td>
+                </tr>
+
         </tbody>
 
     </table>
+
+    Kilometrit yhteensä: <%= kilometritYht %> km
 
     </div>
 
