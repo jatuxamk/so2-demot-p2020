@@ -35,6 +35,32 @@ module.exports = {
         });
        
 
+    },
+
+    haePalvelu : (id, callback) => {
+
+        let sql = "SELECT * FROM palveluhinnasto WHERE id = ?";
+
+        yhteys.query(sql, [id], (err, data) => {
+
+            callback(err, data);
+
+        });
+       
+
+    },
+
+    muokkaaPalvelua : (tiedot, callback) => {
+
+        let sql = "UPDATE palveluhinnasto SET nimi = ?, hinta = ? WHERE id = ?";
+
+        yhteys.query(sql, [tiedot.nimi, tiedot.hinta, tiedot.id], (err) => {
+
+            callback(err);
+
+        });     
+
     }
+
 
 }

@@ -14,25 +14,25 @@
 
     <h2>Palvelun tiedot</h2>
 
-    <form>
+    <form method="POST" action="/tallenna">
 
         <div class="form-group">
             <label for="nimi">Nimi</label>
-            <input class="form-control" type="text" name="nimi" id="nimi" value="">
+            <input class="form-control" type="text" name="nimi" id="nimi" value="<%=palvelu.nimi%>">
         </div>
 
         <div class="form-group">
             <label for="nimi">Hinta</label>
-            <input class="form-control" type="text" name="hinta" id="hinta" value="">
-        </div>        
+            <input class="form-control" type="text" name="hinta" id="hinta" value="<%=palvelu.hinta%>">
+        </div>
+        
+        <input type="hidden" name="id" value="<%=palvelu.id%>">
 
         <input type="submit" class="btn btn-primary" value="Tallenna muutokset">
         <a class="btn btn-outline-secondary" href="/">Peruuta</a>
 
     </form>
     
-
-
     </div>
     
 </body>
