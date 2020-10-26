@@ -8,9 +8,18 @@ const palvelut = require("./models/palvelut");
 app.set("views", "./views");
 app.set("view engine", "ejs");
 
+
+app.get("/muokkaa/:id", (req, res) => {
+
+    res.render("palvelu", {});
+
+});
+
 app.get("/", (req, res) => {
 
-    palvelut.haeKaikkiPalvelut((data) => {
+    palvelut.haeKaikkiPalvelut((err, data) => {
+
+        if (err) throw err;
 
         res.render("index", { "palvelut" : data });
 

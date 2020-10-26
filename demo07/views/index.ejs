@@ -14,20 +14,27 @@
 
     <h2>Palveluhinnasto</h2>
 
-    <%=palvelut%>
-
     <table class="table table-bordered">
         <thead>
             <tr>
                 <th>Palvelun nimi</th>
                 <th>Hinta</th>
+                <th>&nbsp;</th>
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>Renkaiden vaihto</td>
-                <td>80 e</td>
-            </tr>
+
+            <% palvelut.forEach((palvelu) => { %>
+
+                <tr>
+                    <td><%=palvelu.nimi%></td>
+                    <td><%=palvelu.hinta%> e</td>
+                    <td><a href="/muokkaa/<%=palvelu.id%>">Muokkaa</td>
+                </tr>
+
+            <% }) %>
+
+
         </tbody>
     </table>
 
