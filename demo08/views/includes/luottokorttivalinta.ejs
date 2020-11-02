@@ -1,0 +1,9 @@
+<label class="checkbox-inline ml-3 mt-2">
+    <% if (lomaketiedot.luottokorttityyppi && lomaketiedot.luottokorttityyppi.indexOf(luottokorttiArvo) > -1) { %>
+        <input type="checkbox" name="luottokorttityyppi" value="<%=luottokorttiArvo%>" checked>
+        <%=luottokorttiTeksti%>
+    <% } else { %>
+        <input type="checkbox" name="luottokorttityyppi" value="<%=luottokorttiArvo%>">
+        <%=luottokorttiTeksti%>   
+    <% } %>
+</label>

@@ -25,6 +25,14 @@
                 <%- include("includes/sukupuolivalinta", {"sukupuoli" : "Molemmat"})%>
             </div>
 
+            <div class="row">
+                <%- include("includes/luottokorttivalinta", {"luottokorttiArvo" : "visa", "luottokorttiTeksti" : "Visa"}) %>   
+                <%- include("includes/luottokorttivalinta", {"luottokorttiArvo" : "visa-electron", "luottokorttiTeksti" : "Visa Electron"}) %> 
+                <%- include("includes/luottokorttivalinta", {"luottokorttiArvo" : "mastercard", "luottokorttiTeksti" : "Mastercard"}) %> 
+                <%- include("includes/luottokorttivalinta", {"luottokorttiArvo" : "americanexpress", "luottokorttiTeksti" : "American Express"}) %> 
+                <%- include("includes/luottokorttivalinta", {"luottokorttiArvo" : "maestro", "luottokorttiTeksti" : "Maestro"}) %>                   
+            </div>
+
             </div>
         </div>
     </form>
