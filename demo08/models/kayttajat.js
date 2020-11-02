@@ -19,9 +19,11 @@ yhteys.connect((err) => {
 
 module.exports = {
 
-    hae : (callback) => {
+    hae : (lomaketiedot, callback) => {
 
-        let sql = "SELECT * FROM kayttajat LIMIT 50";
+        let hakusana = mysql.escape(`%${lomaketiedot.hakusana}%`);
+
+        let sql = `SELECT * FROM kayttajat WHERE sukunimi LIKE ${hakusana} OR etunimi LIKE ${hakusana} LIMIT 50`;
 
         yhteys.query(sql, (err, data) => {
 

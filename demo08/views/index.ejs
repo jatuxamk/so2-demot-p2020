@@ -16,15 +16,22 @@
         <div class="card w-100 mb-3">
             <div class="card-body">
 
-            <input class="form-control" type="text" name="hakusana" value="" placeholder="Anna hakusana..." size="60">
+            <input class="form-control" type="text" name="hakusana" value="<%=lomaketiedot.hakusana%>" placeholder="Anna hakusana..." size="60">
             <input class="btn btn-primary" type="submit" value="Hae">
+
+            <div class="row">
+                <%- include("includes/sukupuolivalinta", {"sukupuoli" : "Mies"})%>
+                <%- include("includes/sukupuolivalinta", {"sukupuoli" : "Nainen"})%>
+                <%- include("includes/sukupuolivalinta", {"sukupuoli" : "Molemmat"})%>
+            </div>
 
             </div>
         </div>
     </form>
 
-    <table class="table table-bordered">
+    <% if (kayttajat) { %>
 
+    <table class="table table-bordered">
         <thead>
             <tr>
                 <th>Nimi</th>
@@ -48,6 +55,16 @@
         </tbody>
 
     </table>
+
+    <% } %>
+
+    <% if (virhe) { %>
+
+        <div class="alert alert-danger">
+            <%=virhe%>            
+        </div>
+
+    <% } %>
 
     </div>
 
