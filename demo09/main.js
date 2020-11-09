@@ -1,15 +1,22 @@
 const express = require("express");
-
 const app = express();
 
 const portti = 3009;
+
+const artikkelit = require("./models/artikkelit");
 
 app.set("views", "./views");
 app.set("view engine", "ejs");
 
 app.get("/", (req, res) => {
 
-    res.render("index", {});
+    artikkelit.haeKaikki((err, artikkelit) => {
+
+        if (err) throw err;
+
+        res.render("index", {"artikkelit" : artikkelit});
+
+    });
 
 });
 
