@@ -2,14 +2,21 @@ const restify = require("restify");
 
 const server = restify.createServer();
 
+const corsMiddleware = require("restify-cors-middleware");
+
+const cors = corsMiddleware({
+                                "origins" : ["http://localhost"]
+                            });
+
 const portti = 3010;
 
 const tehtavalista = require("./models/tehtavalista");
 
 
 server.pre(restify.pre.sanitizePath()); // korjataan ylimääräiset kauttaviivat
+server.pre(cors.preflight); // Tehdään pyyntöjä edeltävät CORS-asetukset
 server.use(restify.plugins.bodyParser()); // Otetaan mukaan bodyParser
-
+server.use(cors.actual); // Kytketään CORSasetukset/otsikot jokaiseen pyynttöön
 
 server.get("/api/tehtavalista", (req, res, next) => {
 
