@@ -17,15 +17,16 @@ let haeArtikkelit = (url) => {
 
                     } else {
 
+                        console.log(dataJSON.rss.channel[0]);
+
                         let kaikkiArtikkelit = [];
 
                         dataJSON.rss.channel[0].item.forEach((item) => {
 
                             let artikkeliObj = {
                                                 "otsikko" : item.title[0],
-                                                "linkki" : item.link[0],
-                                                "julkaistu" : item.pubDate[0],
-                                                "ingressi" : item.description[0]
+                                                "julkaistu" : new Date(item.pubDate[0]).toLocaleString(),
+                                                "ingressi" : item["content:encoded"][0]
                                                }
 
                             kaikkiArtikkelit.push(artikkeliObj);
