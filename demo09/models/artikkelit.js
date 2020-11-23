@@ -1,7 +1,7 @@
 const fetch = require("node-fetch");
 const xml2js = require("xml2js");
 
-let haeArtikkelit = (url) => {
+let haeaArtikkelit = (url) => {
 
     return new Promise((resolve, reject) => {
 
