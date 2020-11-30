@@ -1,0 +1,17 @@
+[
+  {
+    "nimi": "Siivoa",
+    "ohje": "Myös maton alta",
+    "suoritettu": false
+  },
+  {
+    "nimi": "Käy kaupassa",
+    "ohje": "Muista maito!",
+    "suoritettu": true
+  },
+  {
+    "nimi": "Ulkoiluta koiraa",
+    "ohje": "Ennen iltaa",
+    "suoritettu": true
+  }
+]
