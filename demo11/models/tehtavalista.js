@@ -41,13 +41,22 @@ module.exports = {
     
     "tallenna" : (data, callback) => {
 
-        fs.writeFile("./models/data.json", JSON.stringify(data, null, 2), (err) => {
+        yhteys.query("TRUNCATE TABLE tehtavat", (err) => {
 
-            callback(err);
+            let arvot = data.map((tehtava) => {
+
+                return Object.values(tehtava);
+    
+            });
+    
+            yhteys.query("INSERT INTO tehtavat (nimi, ohje, suoritettu) VALUES ?", [arvot], (err) => {
+    
+                callback(err);
+    
+            });
 
         });
 
     }
-
 
 }
