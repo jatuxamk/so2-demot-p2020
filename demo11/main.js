@@ -1,4 +1,5 @@
 const restify = require("restify");
+const jwt = require("restify-jwt-community");
 
 const server = restify.createServer();
 
@@ -16,6 +17,16 @@ server.pre(restify.pre.sanitizePath()); // korjataan ylimääräiset kauttaviiva
 server.pre(cors.preflight); // Tehdään pyyntöjä edeltävät CORS-asetukset
 server.use(restify.plugins.bodyParser()); // Otetaan mukaan bodyParser
 server.use(cors.actual); // Kytketään CORSasetukset/otsikot jokaiseen pyynttöön
+
+server.use(jwt({ "secret" : "SuuriSalaisuus2020!!" }, (err, req, res, next) => { // Tsekataan onko mukana JSON Web Token
+
+    if (err) {
+        res.send(401, "Tätä REST APIa voi käyttää ainoastaan asianmukaisella JSON Web Tokenilla. Ota yhteyttä ylläpitoon.");
+    } else {
+        return next();        
+    }
+
+})); 
 
 server.get("/api/tehtavalista", (req, res, next) => {
 
