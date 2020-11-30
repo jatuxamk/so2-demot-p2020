@@ -23,11 +23,19 @@ module.exports = {
 
     "avaa" : (callback) => {
 
-        fs.readFile("./models/data.json", (err, data) => {
+        yhteys.query("SELECT * FROM tehtavat", (err, rows)=> {
 
-            callback(err, JSON.parse(data));
+            callback(err, rows.map((rivi) => {
+                if (rivi.suoritettu == 1) {
+                    rivi.suoritettu = true;
+                } else {
+                    rivi.suoritettu = false;
+                }
+                return rivi;
+            }) );
 
         });
+
 
     },
     
