@@ -6,7 +6,8 @@ const server = restify.createServer();
 const corsMiddleware = require("restify-cors-middleware");
 
 const cors = corsMiddleware({
-                                "origins" : ["http://localhost"]
+                                "origins" : ["http://localhost"],
+                                "allowHeaders" : ['Authorization']
                             });
 
 const portti = 3011;
