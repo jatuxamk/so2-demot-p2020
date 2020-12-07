@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Demo 12: NodeJS ja Web APIn käsittely (thetvdb.com)</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+<body>
+
+    <div class="container">
+
+        <h1>Demo 12: NodeJS ja Web APIn käsittely (api.thetvdb.com)</h1>
+
+        <h2>Suosikit koko ryhmälle!</h2>
+
+        <a href="/lisaa" class="btn btn-primary mb-3">Lisää uusi sarja suosikiksi</a>
+
+        <% if (suosikit) { %>
+
+            <%suosikit.forEach((suosikki) => { %>
+
+                <div class="card mb-3">
+                    <img class="card-img-top" src="https://www.thetvdb.com/banners/<%=suosikki.banner%>" alt="">
+                    <div class="card-body">
+                        <h5 class="card-title"><%=suosikki.seriesName%></h5>
+                        <h6 class="card-subtitle mb-2 text-muted"><%=suosikki.genre%></h6>
+                        <p class="card-text"><%=suosikki.overview%></p>
+                    </div>
+                </div>
+
+            <% }); %>
+
+
+        <% } else { %>
+
+            Ei suosikeita
+
+        <% } %>
+    
+
+
+    </div>
+    
+</body>
+</html>
